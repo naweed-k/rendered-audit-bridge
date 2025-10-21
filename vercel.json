@@ -1,0 +1,14 @@
+{
+    "functions": {
+        "api/**": {
+            "includeFiles": [
+                "node_modules/playwright/.local-browsers/**"
+            ],
+            "memory": 1024,
+            "maxDuration": 30
+        }
+    },
+    "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "0"
+    }
+}
