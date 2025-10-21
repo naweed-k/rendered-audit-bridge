@@ -1,12 +1,13 @@
 {
+    "version": 2,
     "functions": {
         "api/**": {
-            "includeFiles": "node_modules/playwright-core/.local-browsers/**",
             "memory": 1024,
             "maxDuration": 30
         }
     },
     "env": {
-        "PLAYWRIGHT_BROWSERS_PATH": "0"
+        "RENDERER": "puppeteer",
+        "TOOL_SUFFIX": "_prod"
     }
 }
