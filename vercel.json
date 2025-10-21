@@ -1,7 +1,7 @@
 {
     "functions": {
         "api/**": {
-            "includeFiles": "node_modules/playwright/.local-browsers/**",
+            "includeFiles": "node_modules/playwright-core/.local-browsers/**",
             "memory": 1024,
             "maxDuration": 30
         }
