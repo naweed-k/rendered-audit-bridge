@@ -7,11 +7,18 @@ const path = require("path");
 // Choose implementation by env (default to Playwright)
 function pickRenderer() {
     const mode = String(process.env.RENDERER || "").toLowerCase();
-    if (mode === "puppeteer") {
-        return require(path.join(__dirname, "renderer.puppeteer"));
+    const isVercel = process.env.VERCEL === "1";
+
+    if (mode === "puppeteer" || isVercel) {
+        console.log("[get_rendered_html] using renderer.puppeteer");
+        return require("./renderer.puppeteer");
     }
-    return require(path.join(__dirname, "renderer.playwright"));
+
+    console.log("[get_rendered_html] using renderer.playwright");
+    return require("./renderer.playwright");
 }
+
+
 
 module.exports = async function getRenderedHtml(req, res) {
     try {

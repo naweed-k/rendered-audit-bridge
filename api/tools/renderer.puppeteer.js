@@ -54,10 +54,22 @@ module.exports = async function renderWithPuppeteer(p = {}) {
 
     try {
         const executablePath = await chromium.executablePath();
+
+        chromium.setHeadlessMode = true;      // important on Vercel
+        chromium.setGraphicsMode = false;     // disable GPU/GL
+
         browser = await puppeteer.launch({
-            args: chromium.args,
             executablePath,
-            headless: chromium.headless,
+            headless: chromium.headless,        // uses correct value for the env
+            args: [
+                ...chromium.args,
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--single-process",
+                "--disable-dev-shm-usage",
+                "--disable-gpu",
+                "--no-zygote"
+            ],
             defaultViewport: deviceViewport
         });
 
