@@ -56,12 +56,11 @@ module.exports = async function renderWithPlaywright(p = {}) {
 
         // ⬇️ null-safe navigation (do NOT call nav.status())
         let nav = null;
-        try {
-            nav = await page.goto(url, { waitUntil: "domcontentloaded", timeout: timeout_ms });
-        } catch (_) { /* ignore */ }
 
         try {
-            await page.waitForLoadState("networkidle", { timeout: Math.min(timeout_ms, 15000) });
+            nav = await page.goto(url, { waitUntil: "networkidle", timeout: timeout_ms });
+            await page.waitForTimeout(2000);
+            html = await page.content();
         } catch (_) { /* ignore */ }
 
         finalURL = page.url() || url;
