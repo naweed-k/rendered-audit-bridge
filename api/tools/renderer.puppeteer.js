@@ -68,7 +68,10 @@ module.exports = async function renderWithPuppeteer(p = {}) {
                 "--single-process",
                 "--disable-dev-shm-usage",
                 "--disable-gpu",
-                "--no-zygote"
+                "--no-zygote",
+                "--hide-scrollbars",
+                "--mute-audio",
+                "--no-first-run"
             ],
             defaultViewport: deviceViewport
         });
