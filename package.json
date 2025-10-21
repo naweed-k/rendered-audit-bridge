@@ -6,8 +6,11 @@
   "scripts": {
     "start": "node api/server.js",
     "dev": "nodemon api/server.js",
-    "postinstall": "node -e \"if(!process.env.VERCEL){require('child_process').execSync('npx playwright install --with-deps chromium',{stdio:'inherit'})}\""
+    "setup:local": "npx playwright install --with-deps chromium"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@sparticuz/chromium": "^123.0.1",
     "axios": "^1.12.2",
