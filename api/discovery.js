@@ -2,7 +2,7 @@ module.exports = (req, res) => {
     res.json({
         functions: [
             {
-                name: "get_rendered_html",
+                name: "get_rendered_html_prod",
                 description: "Render URL via Playwright; returns a slim HTML excerpt and parsed fields.",
                 endpoint: "/tools/get-rendered-html",
                 http_method: "POST",
@@ -18,7 +18,7 @@ module.exports = (req, res) => {
                 auth_requirements: []
             },
             {
-                name: "run_lighthouse",
+                name: "run_lighthouse_prod",
                 description: "Fetch Lighthouse/PageSpeed data (compact summary only).",
                 endpoint: "/tools/run-lighthouse",
                 http_method: "POST",
