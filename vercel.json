@@ -1,9 +1,9 @@
 {
     "version": 2,
     "functions": {
-        "api/**": {
-            "memory": 1024,
-            "maxDuration": 30
+        "api/**.js": {
+            "memory": 1536,
+            "maxDuration": 60
         }
     },
     "env": {

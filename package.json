@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node api/server.js",
     "dev": "nodemon api/server.js",
-    "postinstall": "npx playwright install chromium"
+    "setup:local": "npx playwright install --with-deps chromium"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +18,11 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "playwright": "^1.56.1",
     "puppeteer-core": "^23.11.1",
     "undici": "^7.16.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "playwright": "^1.56.1"
   }
 }
